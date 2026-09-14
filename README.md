@@ -17,6 +17,10 @@ Rendered with `node skills/asciify/scripts/asciify.mjs wordmark "ASCIIFY"` from 
 
 47 columns by 6 rows, in ANSI Shadow, the default wordmark font.
 
+## Samples
+
+More renders are in `samples/`, each with the command that made it.
+
 ## Install
 
 For any agent, install the skill folder:
