@@ -71,7 +71,7 @@ Diagrams, flowcharts, tables, boxes around ordinary text, emoji art, sprites. It
 
 ## Tests and evals
 
-`npm test` runs 73 engine tests on Node 20 or newer. The skill itself is tested with headless Claude sessions against a fixed set of requests. The latest run passed 39 of 39 expectations with the skill, against 26 of 39 without it, and fired on 18 of 20 trigger queries.
+`npm test` runs 72 engine tests on Node 20 or newer. The skill itself is tested with headless Claude sessions against a fixed set of requests. The latest run passed 39 of 39 expectations with the skill, against 26 of 39 without it, and fired on 18 of 20 trigger queries.
 
 ## License
 

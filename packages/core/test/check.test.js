@@ -111,7 +111,7 @@ test('themes: low contrast in either theme warns, a color near a terminal backgr
 });
 
 test('the badge render passes as a bitmap with a raised row limit; its warnings are listed for tuning', (t) => {
-  const r = check(render('04-halfblock-69x26.txt'), { mode: 'bitmap', maxRows: 40 });
+  const r = check(render('badge-69x26.txt'), { mode: 'bitmap', maxRows: 40 });
   assert.equal(r.ok, true);
   for (const w of r.warnings) t.diagnostic(`${w.check}: ${w.message}`);
 });

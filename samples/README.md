@@ -1,6 +1,6 @@
 # Samples
 
-Sample renders from asciify, run from the repository root: wordmarks, color formats, pixel imagery, and one animation.
+Sample renders from asciify, run from the repository root: wordmarks, color formats, pixel imagery, and two animations.
 
 ## Wordmarks
 
@@ -18,7 +18,9 @@ Sample renders from asciify, run from the repository root: wordmarks, color form
 ## Pixel imagery
 
 - heart.txt, 26 by 9: `asciify bitmap skills/asciify/references/examples/heart.txt` (a hand-typed pixel grid rendered as half-blocks)
+- grimoire.txt, 64 by 26: `asciify scene skills/asciify/references/examples/badge.mjs --scale 1.5 --rows 40` (a scene module rendered as half-blocks)
 
 ## Animation
 
 - asciify-typewriter-glitch.gif, 48 frames at 12 frames per second, 376 by 96 pixels: `asciify animate asciify-ansi-shadow.txt --reveal typewriter --loop glitch --color amber --format gif --out asciify-typewriter-glitch.gif`
+- grimoire-fire.gif, 24 frames at 12 frames per second, 512 by 416 pixels: `asciify animate grimoire.txt --effects "glow:0.7,pulse:0.4,color-flicker:0.3" --color sunset --format gif --out grimoire-fire.gif`

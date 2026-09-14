@@ -75,9 +75,9 @@ Scaling by a whole number keeps every edge crisp. `--scale 2` gives 56 columns b
 
 Regions: replace `#` with letters to name parts of the image, and each letter gets its own color slot when the art is colored; two regions in one cell render exactly.
 
-## A scene module: the badge
+## A scene module: the grimoire
 
-`references/examples/badge.mjs` draws a wizard's hat standing on a lined page with a folded corner. It exports a `design` size in pixels and a `scene(geometry, scale)` that returns layers, bottom first. The page is a function in pixel coordinates so its border stays one whole pixel wide at any scale; the hat is a union of an ellipse and a crown function with a band and three stars subtracted; the hat layer carries `gap: 1`, which clears one pixel of the page around it. Render it with `node scripts/asciify.mjs scene references/examples/badge.mjs --scale 1.5 --rows 40`; add `--map` to see the two regions, `P` and `H`, and `--color rad-sorcerer` to color them by area, or `--region H=#f566a9` to pin the hat.
+`references/examples/badge.mjs` draws a closed grimoire seen from the front cover: a spine on the left, a clasp that clamps the right edge, and a cover between them. It exports a `design` size in pixels and a `scene(geometry, scale)` that returns layers, bottom first. The spine is a rectangle with three bands cut across it; the cover is a rectangle with a frame one pixel inside its edge, a ring and a four-point star at its center, and four corner crosses, each a union of two bars, all subtracted from the cover as negative space; the cover and the clasp both carry `gap: 1`, and the clasp reaches two pixels past the cover's right edge. Render it with `node scripts/asciify.mjs scene references/examples/badge.mjs --scale 1.5 --rows 40`; add `--map` to see the three regions, `S`, `B`, and `C`, and `--color sunset` to color them by area, or `--region C=#ffd166` to pin the clasp.
 
 ## The rules these follow
 

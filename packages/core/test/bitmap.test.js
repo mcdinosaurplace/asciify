@@ -1,7 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { execFileSync } from 'node:child_process';
 import { parseBitmap, toGrid, renderHalfblocks, scaleBitmap, bitmapMap, halfblocksToPixels, geometry, renderScene, check } from '../index.js';
 
 const root = new URL('../../../', import.meta.url);
@@ -62,16 +61,13 @@ test('renderScene: a layer with a gap clears the layer below around its mask, an
   assert.equal(b.cells[3][3], null);
 });
 
-test('the badge example reproduces the old render byte for byte at scale 1.5, and the old script live at three scales', async () => {
+test('the current scene: a snapshot at scale 1.5 and the checks at scales 1, 1.5, and 2', async () => {
   const mod = await import(new URL('skills/asciify/references/examples/badge.mjs', root));
   const build = (S) => { const w = Math.round(mod.design.width * S); let h = Math.round(mod.design.height * S); h += h % 2; return renderScene(mod.scene(geometry, S), { width: w, height: h, scale: S }); };
-  const reference = readFileSync(new URL('./fixtures/04-halfblock-69x26.txt', import.meta.url), 'utf8');
+  const reference = readFileSync(new URL('./fixtures/badge-69x26.txt', import.meta.url), 'utf8');
   assert.equal(renderHalfblocks(build(1.5), { trim: true }), reference);
-  const script = new URL('./fixtures/halfblock-badge.mjs', import.meta.url).pathname;
   for (const S of [1, 1.5, 2]) {
-    const live = execFileSync('node', [script, String(S)], { encoding: 'utf8' });
-    assert.equal(renderHalfblocks(build(S)), live, `scale ${S}`);
+    const c = check(renderHalfblocks(build(S), { trim: true }), { mode: 'bitmap', band: 'wide', maxRows: 40 });
+    assert.equal(c.ok, true, `scale ${S}`);
   }
-  const c = check(renderHalfblocks(build(1.5), { trim: true }), { mode: 'bitmap', maxRows: 40 });
-  assert.equal(c.ok, true);
 });
