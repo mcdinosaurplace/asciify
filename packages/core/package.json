@@ -1,0 +1,50 @@
+{
+  "name": "asciify-core",
+  "version": "0.1.0",
+  "private": false,
+  "description": "The asciify engine.",
+  "license": "MIT",
+  "type": "module",
+  "exports": "./index.js",
+  "engines": { "node": ">=20" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcdinosaurplace/asciify.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/mcdinosaurplace/asciify#readme",
+  "bugs": "https://github.com/mcdinosaurplace/asciify/issues",
+  "keywords": ["ascii", "ascii-art", "wordmark", "figlet", "half-block", "terminal"],
+  "files": [
+    "index.js",
+    "animate.js",
+    "ansi.js",
+    "bitmap.js",
+    "bmp.js",
+    "cells.js",
+    "check.js",
+    "color.js",
+    "colorways.js",
+    "contrast.js",
+    "effects.js",
+    "figlet.js",
+    "fontraster.js",
+    "fonts.js",
+    "frames.js",
+    "geometry.js",
+    "gif.js",
+    "html.js",
+    "image.js",
+    "measure.js",
+    "pixels.js",
+    "png.js",
+    "ramps.js",
+    "raster.js",
+    "styles.js",
+    "wordmark.js"
+  ],
+  "dependencies": {
+    "figlet": "^1.11.4",
+    "opentype.js": "^1.3.4"
+  }
+}

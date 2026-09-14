@@ -1,0 +1,12 @@
+{
+  "name": "asciify",
+  "private": true,
+  "type": "module",
+  "workspaces": ["packages/*"],
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test",
+    "build": "esbuild packages/cli/cli.js --bundle --platform=node --format=esm --target=node20 --outfile=skills/asciify/scripts/asciify.mjs"
+  },
+  "devDependencies": { "esbuild": "^0.25.0" }
+}

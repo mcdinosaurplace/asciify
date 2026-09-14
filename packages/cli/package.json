@@ -1,0 +1,20 @@
+{
+  "name": "asciify-cli",
+  "version": "0.1.0",
+  "private": false,
+  "description": "The asciify command line.",
+  "license": "MIT",
+  "type": "module",
+  "bin": { "asciify": "./cli.js" },
+  "engines": { "node": ">=20" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcdinosaurplace/asciify.git",
+    "directory": "packages/cli"
+  },
+  "homepage": "https://github.com/mcdinosaurplace/asciify#readme",
+  "bugs": "https://github.com/mcdinosaurplace/asciify/issues",
+  "keywords": ["ascii", "ascii-art", "wordmark", "cli", "terminal"],
+  "files": ["cli.js"],
+  "dependencies": { "asciify-core": "^0.1.0" }
+}
